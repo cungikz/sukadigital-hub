@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111e37" />
+  <meta name="description" content="SukaDigital Hub: prototipe open-source dashboard layanan TIK, katalog aplikasi, dan pemantauan insiden untuk inspirasi transformasi digital pemerintahan daerah." />
+  <title>SukaDigital Hub — Dashboard Layanan TIK</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span class="mark-orbit"></span><span class="mark-dot"></span></div>
+        <div class="brand-name"><strong>Suka<span>Digital</span></strong><small>HUB · OPEN SOURCE</small></div>
+      </div>
+      <div class="workspace"><div class="workspace-icon">SK</div><div class="workspace-copy"><span>Ruang Kerja Demo</span><b>Diskominfosan</b></div><span class="workspace-chevron">⌄</span></div>
+      <div class="nav-group-title">MENU UTAMA</div>
+      <nav class="nav-list" id="mainNav">
+        <button class="nav-item active" data-page="dashboard" type="button"><span class="nav-icon" data-icon="grid"></span><span>Dashboard</span></button>
+        <button class="nav-item" data-page="tickets" type="button"><span class="nav-icon" data-icon="ticket"></span><span>Tiket Layanan TIK</span><span class="nav-count" id="ticketNavCount">0</span></button>
+        <button class="nav-item" data-page="apps" type="button"><span class="nav-icon" data-icon="layers"></span><span>Katalog Aplikasi</span></button>
+        <button class="nav-item" data-page="security" type="button"><span class="nav-icon" data-icon="shield"></span><span>Keamanan Informasi</span></button>
+        <button class="nav-item" data-page="analytics" type="button"><span class="nav-icon" data-icon="chart"></span><span>Statistik & Laporan</span></button>
+      </nav>
+      <div class="nav-group-title second">PREFERENSI</div>
+      <nav class="nav-list"><button class="nav-item" data-page="settings" type="button"><span class="nav-icon" data-icon="settings"></span><span>Pengaturan & Data</span></button></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><span class="tip-light">✦</span><b>Proyek komunitas</b><p>Dirancang untuk pembelajaran, prototipe, dan kontribusi open-source.</p><a href="https://diskominfosan.sukabumikab.go.id/" target="_blank" rel="noopener noreferrer">Situs dinas resmi ↗</a></div>
+        <div class="sidebar-user"><div class="user-avatar">D</div><div><strong>Pengguna Demo</strong><small>Mode lokal · Tanpa login</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-start"><button class="icon-button mobile-menu" id="mobileMenu" type="button" aria-label="Buka menu" title="Buka menu"><span data-icon="menu"></span></button><div class="breadcrumb"><span>Workspace</span><span class="crumb-sep">/</span><strong id="breadcrumb">Dashboard</strong></div></div>
+        <div class="top-actions"><div class="date-pill"><span data-icon="calendar"></span><span id="todayText"></span></div><button class="icon-button" id="themeToggle" type="button" title="Ganti tema" aria-label="Ganti tema"><span data-icon="moon"></span></button><div class="top-avatar">D</div></div>
+      </header>
+      <main class="main-content" id="app" tabindex="-1" aria-live="polite"></main>
+      <footer class="footer"><span>© <span id="copyrightYear"></span> SukaDigital Hub · Prototipe komunitas independen</span><span>Data contoh & tersimpan di browser · Bukan aplikasi resmi Pemkab Sukabumi</span></footer>
+    </div>
+  </div>
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <dialog id="entryDialog" aria-labelledby="dialogTitle"><form id="entryForm" method="dialog" novalidate><div class="dialog-head"><div><span class="eyebrow">TAMBAH DATA BARU</span><h2 id="dialogTitle">Buat Tiket</h2></div><button class="icon-button close-modal" type="button" id="closeDialog" aria-label="Tutup"><span data-icon="x"></span></button></div><div class="form-fields" id="formFields"></div><div class="dialog-actions"><button type="button" class="btn btn-ghost" id="cancelDialog">Batal</button><button type="submit" class="btn btn-primary"><span data-icon="check"></span><span>Simpan Data</span></button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="importFile" type="file" accept="application/json,.json" hidden />
+</body>
+</html>
